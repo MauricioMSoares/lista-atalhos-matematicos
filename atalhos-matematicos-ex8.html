@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    
+    <h1>Cartão Fidelidade</h1>
+    <img src="https://i.ibb.co/dDV61bT/passagens.png" alt="Tabela de custos de passagens"><br>
+    <button onclick="comprar08()">
+        08 passagens
+    </button>
+    <button onclick="comprar20()">
+        20 passagens
+    </button>
+    <button onclick="comprar50()">
+        50 passagens
+    </button><br>
+    <div id="mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    var passagem_normal = 4.40;
+    var passagem_desconto = 0;
+    var qtde_passagem = 0;
+    var valor_sem_desconto = 0;
+    var valor_com_desconto = 0;
+    var porcentagem_desconto = 0;
+    var passagem_extra = 0;
+
+    function comprar08() {
+        qtde_passagem = 8;
+        passagem_desconto = 4.06;
+        valor_sem_desconto = passagem_normal * qtde_passagem;
+        valor_com_desconto = passagem_desconto * qtde_passagem;
+        porcentagem_desconto = ((valor_sem_desconto / valor_com_desconto) - 1) * 100;
+        passagem_extra = (valor_sem_desconto - valor_com_desconto) / passagem_normal;
+        
+        mensagem.innerHTML = `<p>Ao comprar <b>${qtde_passagem}</b> passagens, você pagou 
+        <b>${porcentagem_desconto.toFixed(1)}%</b> a menos. É como se tivesse ganhado 
+        <b>${passagem_extra.toFixed(1)}</b> passagens de bônus.</p>`;
+    }
+
+    function comprar20() {
+        qtde_passagem = 20;
+        passagem_desconto = 3.93;
+        valor_sem_desconto = passagem_normal * qtde_passagem;
+        valor_com_desconto = passagem_desconto * qtde_passagem;
+        porcentagem_desconto = ((valor_sem_desconto / valor_com_desconto) - 1) * 100;
+        passagem_extra = (valor_sem_desconto - valor_com_desconto) / passagem_normal;
+        
+        mensagem.innerHTML = `<p>Ao comprar <b>${qtde_passagem}</b> passagens, você pagou 
+        <b>${porcentagem_desconto.toFixed(1)}%</b> a menos. É como se tivesse ganhado 
+        <b>${passagem_extra.toFixed(1)}</b> passagens de bônus.</p>`;
+    }
+
+    function comprar50() {
+        qtde_passagem = 50;
+        passagem_desconto = 3.83;
+        valor_sem_desconto = passagem_normal * qtde_passagem;
+        valor_com_desconto = passagem_desconto * qtde_passagem;
+        porcentagem_desconto = ((valor_sem_desconto / valor_com_desconto) - 1) * 100;
+        passagem_extra = (valor_sem_desconto - valor_com_desconto) / passagem_normal;
+        
+        mensagem.innerHTML = `<p>Ao comprar <b>${qtde_passagem}</b> passagens, você pagou 
+        <b>${porcentagem_desconto.toFixed(1)}%</b> a menos. É como se tivesse ganhado 
+        <b>${passagem_extra.toFixed(1)}</b> passagens de bônus.</p>`;
+    }
+
+</script>
